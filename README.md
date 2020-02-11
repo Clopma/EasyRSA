@@ -21,7 +21,7 @@ try {
 
 ```
 try {
-    RSAUtils rsa = new RSAUtils(3072); //key length min: 512 recommended; 3072 / 4096
+    RSAUtils rsa = new RSAUtils(3072); //key length min: 512 recommended: 3072 / 4096
     String encryptedText = rsa.encrypt("Test 123");
     String decryptedText = rsa.decrypt(encryptedText);
     System.out.println(decryptedText); //Prints: Test 123
