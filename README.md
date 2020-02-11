@@ -22,13 +22,11 @@ try {
 ```
 try {
     RSAUtils rsa = new RSAUtils(3072); //key length min: 512 recommended; 3072 / 4096
-    String encryptedText = rsa.encrypt("Prueba 123");
+    String encryptedText = rsa.encrypt("Test 123");
     String decryptedText = rsa.decrypt(encryptedText);
-    System.out.println(decryptedText); //Imprime: Prueba 123
-} catch (InvalidKeySpecException e) {
-     //Revisa tus claves
+    System.out.println(decryptedText); //Prints: Test 123
 } catch (IllegalBlockSizeException e) {
-     //String demasiado largo para la clave aportada
+     //String too long for the granted key
 }
 ```
 
@@ -37,12 +35,12 @@ try {
 ```
 try {
     RSAUtils rsa = new RSAUtils(publicKeyStr);
-    String encryptedText = rsa.encrypt("Prueba 123");
+    String encryptedText = rsa.encrypt("Test 123");
     String decryptedText = rsa.decrypt(encryptedText);
-    System.out.println(decryptedText); //Imprime: Prueba 123
+    System.out.println(decryptedText); //Prints: Test 123
 } catch (InvalidKeySpecException e) {
-     //Revisa tus claves
+     //Check your key
 } catch (IllegalBlockSizeException e) {
-     //String demasiado largo para la clave aportada
+     //String too long for the granted key
 }
 ```
