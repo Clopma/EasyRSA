@@ -90,8 +90,7 @@ public class RSAUtils {
 
     public String encrypt(String textoPlano) throws IllegalBlockSizeException {
         try {
-            byte[] b = encrypter.doFinal(textoPlano.getBytes());
-            return new String(Base64.encodeBase64(b), StandardCharsets.ISO_8859_1);
+            return new String(Base64.encodeBase64(encrypter.doFinal(textoPlano.getBytes())), StandardCharsets.ISO_8859_1);
         } catch (IllegalBlockSizeException e) {
             initEncrypter();
             throw e;
